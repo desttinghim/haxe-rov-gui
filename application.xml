@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <meta title="ROV GUI" package="" version="1.0.0" company="Subaquatics" />
+ 
+    <app main="Main" file="rov_gui" path="bin" />
+     
+    <window background="#FFFFFF" fps="60" />
+    <window width="800" height="600" unless="mobile" />
+    <window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+     
+    <!-- classpath, haxe libs -->
+    <source path="src/" />
+    <haxelib name="haxeui" />
+
+    <haxelib name="hxSerial" />
+    <ndll name="hxSerial" haxelib="hxSerial" />
+
+    <assets path="assets/layouts" rename="layouts" />
+</project>

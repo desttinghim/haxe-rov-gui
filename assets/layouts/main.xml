@@ -1,0 +1,18 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<vbox id="main" width="100%">
+
+	<menubar width="100%"></menubar>
+
+	<hbox width="100%">
+
+		<scrollview width="33%">
+			<vbox width="100%" id="ports" />
+		</scrollview>
+
+		<scrollview width="67%">
+			<vbox width="100%" id="stats">
+			</vbox>
+		</scrollview>
+	</hbox>
+</vbox>
