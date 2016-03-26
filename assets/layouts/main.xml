@@ -12,6 +12,7 @@
 
 		<scrollview width="67%">
 			<vbox width="100%" id="stats">
+				<linegraph id="mylinegraph" width="500" height="500" xlineinterval="20" ylineinterval="20" />
 			</vbox>
 		</scrollview>
 	</hbox>

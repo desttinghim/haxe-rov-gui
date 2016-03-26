@@ -1,6 +1,7 @@
 package components;
 
 import haxe.ui.toolkit.core.Component;
+import haxe.ui.toolkit.events.UIEvent;
 
 class LineGraph extends Component {
 
@@ -25,10 +26,18 @@ class LineGraph extends Component {
 		dataset.add({x: 50, y: 30});
 		dataset.add({x: 75, y: 50});
 
-		updateGraph();
+		// updateGraph();
+	} // new
+
+	override function initialize() {
+		xmax = width;
+		ymax = height;
+		trace('width:${width}\theight: ${height}\txlineinterval: ${xlineinterval}');
+		// updateGraph();
 	}
 
-	public function updateGraph() {
+	override function paint() {
+		trace("updating graph");
 		graphics.clear();
 		graphics.beginFill(0xffffff);
 		graphics.drawRect(0, 0, xmax, ymax);
@@ -57,6 +66,6 @@ class LineGraph extends Component {
 			graphics.lineTo(point.x, ymax-point.y);
 			graphics.drawCircle(point.x, ymax-point.y, 2);
 		}
-	}
+	} // updateGraph
 
 }

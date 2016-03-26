@@ -34,14 +34,15 @@ class Main {
 		var portView = root.findChild("ports", VBox, true);
 		var statsView = root.findChild("stats", VBox, true);
 
-		statsView.addChild(new LineGraph());
+		// statsView.addChild(new LineGraph());
 
 		var isComConnected = false;
 		for(port in Serial.getDeviceList()) {
-			if(~/.*(usb|com).*/i.match(port)) {
+			if(~/.*(acm|com).*/i.match(port)) {
 				isComConnected = true;
 				var button = new Button();
 				button.text = port;
+				button.width = portView.width;
 				button.onClick = function(event:UIEvent) {
 					serial.serial = new Serial(port, 9600);
 				};
